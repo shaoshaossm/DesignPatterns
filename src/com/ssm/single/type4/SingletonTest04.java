@@ -5,7 +5,7 @@ package com.ssm.single.type4;
  * @version 1.0
  * @date 2022/5/13 16:36
  */
-public class SingletonTest03 {
+public class SingletonTest04 {
     public static void main(String[] args) {
         Singleton instance = Singleton.getInstance();
         Singleton instance2 = Singleton.getInstance();

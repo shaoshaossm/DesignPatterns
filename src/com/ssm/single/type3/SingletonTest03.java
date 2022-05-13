@@ -22,7 +22,7 @@ class Singleton {
     // 本类内部创建一个对象实例
     private static Singleton instance;
 
-    // 提供一个公共的静态方法，当使用到类的时候，才会自动创建一个对象实例
+    // 提供一个公共的静态方法，加入synchronized关键字，保证线程安全
     public static Singleton getInstance() {
         if (instance == null) {
             instance = new Singleton();

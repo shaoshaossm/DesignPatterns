@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class pizza {
++prepare():void
++bake():void
++cut():void
++box():void
+}
+class CheesePizza extends pizza {
+}
+class greenPizza extends pizza {
+}
+class pepperoniPizza extends pizza {
+}
+class SimpleFactory
+note top: 仅修改简单工厂类的代码，\n可以实现不同的披萨
+class OrderPizza
+class OrderPizza2
+class OrderPizza3
+OrderPizza o-- SimpleFactory :聚合
+OrderPizza2 o-- SimpleFactory :聚合
+OrderPizza3 o-- SimpleFactory :聚合
+@enduml

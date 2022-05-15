@@ -13,22 +13,32 @@ import java.io.InputStreamReader;
  */
 public abstract class OrderPizza {
     // 构造方法
-    public  OrderPizza() {
+    public OrderPizza() {
         Pizza pizza = null;
         String orderType;
         do {
             orderType = getType();
             //调用方法
             pizza = creatPizza(orderType);
-            //输出pizza制作过程
-            pizza.prepare();
-            pizza.bake();
-            pizza.cut();
-            pizza.box();
-        } while (true);
+            if (pizza != null) {
+                //输出pizza制作过程
+                pizza.prepare();
+                pizza.bake();
+                pizza.cut();
+                pizza.box();
+            } else {
+                System.out.println("订购失败");
+                break;
+            }
+        }
+        while (true);
+
+
     }
+
     //定义一个抽象方法，让各个工厂子类自己实现
-    abstract Pizza  creatPizza(String orderType);
+    abstract Pizza creatPizza(String orderType);
+
     //写一个方法，可以获取客户希望订购的披萨种类
     private String getType() {
         try {

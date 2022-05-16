@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class pizza {
++prepare():void
++bake():void
++cut():void
++box():void
+}
+class BJCheesePizza extends pizza {
+}
+class BJpepperoniPizza extends pizza {
+}
+class LDCheesePizza extends pizza {
+}
+class LDpepperoniPizza extends pizza {
+}
+
+class AbsFactory {
++createPizza:pizza
+}
+class BJFactory implements AbsFactory {
+}
+class LDFactory implements AbsFactory {
+}
+
+BJFactory ..> BJCheesePizza: 依赖
+BJFactory ..> BJpepperoniPizza : 依赖
+LDFactory ..> LDCheesePizza : 依赖
+LDFactory ..> LDpepperoniPizza : 依赖
+OrderPizza o-- AbsFactory : 聚合
+OrderPizza2 o-- AbsFactory : 聚合
+@enduml

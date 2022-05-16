@@ -1,7 +1,5 @@
 package com.ssm.prototype.deepclone;
 
-import com.sun.istack.internal.localization.NullLocalizable;
-
 import java.io.*;
 
 /**

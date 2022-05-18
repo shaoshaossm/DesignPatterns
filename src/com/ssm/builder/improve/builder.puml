@@ -1,0 +1,28 @@
+@startuml
+
+class House
+note top of House : 产品
+class HouseBuilder{
+
+     #  house: House = new House();
+        buildBasic():void
+        buildWalls():void
+        roofed():void
+        build():House
+}
+HouseBuilder *-- House
+class CommonHouseBuilder extends HouseBuilder{
+}
+class HighHouseBuilder extends HouseBuilder{
+}
+class HouseDirector{
+    # houseBuilder:HouseBuilder
+}
+
+HouseDirector o-- HouseBuilder
+class Client
+Client ..> HouseDirector
+Client ..> CommonHouseBuilder
+Client ..> HighHouseBuilder
+
+@enduml

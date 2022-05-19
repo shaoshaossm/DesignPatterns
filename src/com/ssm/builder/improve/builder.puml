@@ -5,10 +5,10 @@ note top of House : 产品
 class HouseBuilder{
 
      #  house: House = new House();
-        buildBasic():void
-        buildWalls():void
-        roofed():void
-        build():House
+     +   buildBasic():void
+     +   buildWalls():void
+     +   roofed():void
+     +   build():House
 }
 HouseBuilder *-- House: 组合
 class CommonHouseBuilder extends HouseBuilder{

@@ -10,7 +10,7 @@ class HouseBuilder{
         roofed():void
         build():House
 }
-HouseBuilder *-- House
+HouseBuilder *-- House: 组合
 class CommonHouseBuilder extends HouseBuilder{
 }
 class HighHouseBuilder extends HouseBuilder{
@@ -19,10 +19,10 @@ class HouseDirector{
     # houseBuilder:HouseBuilder
 }
 
-HouseDirector o-- HouseBuilder
+HouseDirector o-- HouseBuilder: 聚合
 class Client
-Client ..> HouseDirector
-Client ..> CommonHouseBuilder
-Client ..> HighHouseBuilder
+Client ..> HouseDirector: 依赖
+Client ..> CommonHouseBuilder: 依赖
+Client ..> HighHouseBuilder: 依赖
 
 @enduml

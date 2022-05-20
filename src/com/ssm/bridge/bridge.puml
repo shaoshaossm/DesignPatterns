@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Brand {
+    +void open();
+
+    +void close();
+
+    +void call();
+}
+class Oppo implements Brand {
+
+}
+class Vivo implements Brand {
+
+}
+abstract class Phone {
+    - Brand brand;
+}
+class FoldedPhone extends Phone {
+
+}
+class UprightPhone extends Phone {
+
+}
+class Client
+Client ..> Phone:依赖
+Client ..> Brand:依赖
+Phone o-- Brand:聚合
+@enduml

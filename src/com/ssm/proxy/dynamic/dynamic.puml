@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class IteacherDao{
+    teach():void
+}
+class TeacherDao implements IteacherDao{
+    teach():void
+}
+class ProxyFactory{
+    ProxyFactory();
+    getProxyInstance():Object
+}
+note top of ProxyFactory : getProxyInstance():\n1.根据传入的对象（TeacherDao），目标对象\n2.利用返回机制，返回一个代理对象\n3.然后通过代理对象，调用目标方法
+class Client
+Client ..> ProxyFactory
+Client ..> TeacherDao
+
+@enduml

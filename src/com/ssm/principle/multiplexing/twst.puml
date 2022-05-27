@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+A <|- B
+class A {
+    +operation a():void
+    +operation c():void
+    +operation b():void
+}
+note top: B 仅仅只是使用A的方法，\n使用继承就会让A和B耦合性增强
+class B {
+
+}
+
+A1 <.. B1 :依赖
+class A1 {
+    +operation a():void
+    +operation c():void
+    +operation b():void
+}
+
+class B1 {
+    +operation(a1:A1):void
+}
+
+
+A2 o-- B2 :聚合
+class A2 {
+    +operation a():void
+    +operation c():void
+    +operation b():void
+}
+
+class B2 {
+    -a2:A2
+    +setA2(a2:A2):void
+}
+
+A3 *-- B3 :组合
+class A3 {
+    +operation a():void
+    +operation c():void
+    +operation b():void
+}
+
+class B3 {
+    -a3:A3 = new A3()
+}
+@enduml

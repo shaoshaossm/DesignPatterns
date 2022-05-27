@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Command {
+    +execute()
+    +undo()
+}
+class NoCommand implements Command {
+    +execute()
+    +undo()
+}
+note top of NoCommand: 空命令，简化操作省去对空的判断
+class lightOnCommand implements Command {
+    +execute()
+    +undo()
+}
+class lightOffCommand implements Command {
+
+}
+class RemoteController {
+    -onCommands:Command[]
+    -offCommands:Command[]
+}
+class LightReceiver {
+    +lightOn()
+    +lightOff()
+}
+
+class Client{
+}
+
+Command --o RemoteController
+LightReceiver --o lightOffCommand
+LightReceiver --o lightOnCommand
+Client ..> RemoteController
+Client ..> lightOffCommand
+Client ..> lightOnCommand
+Client ..> LightReceiver
+
+
+@enduml

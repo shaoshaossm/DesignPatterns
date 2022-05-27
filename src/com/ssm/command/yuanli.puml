@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Command {
+   + execute():void;
+   + undo() : void;
+}
+class ConcreteCommand implements Command {
+    +    execute():void;
+     +   undo() : void;
+}
+class Receiver{
+    + action():void;
+}
+class Invoker{
+
+}
+class Client{
+    + main():void;
+}
+Client ..>Invoker
+Client ..>Receiver
+Client ..>ConcreteCommand
+Command --o Invoker
+Receiver ..o ConcreteCommand
+@enduml

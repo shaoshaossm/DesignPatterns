@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface MethodInterceptor
+class ProxyFactory implements MethodInterceptor{
+    -target:Object
+    ProxyFactory():void
+    getInstance():Object
+    intecept():void
+}
+note top of ProxyFactory:getInstance()给目标对象targe创建一个代理对象，\n重写intecept()方法，\n实现对被代理对象方法的调用
+class TeacherDao{
+    teach():void
+}
+class Client
+Client ..> ProxyFactory
+Client ..> TeacherDao
+
+@enduml

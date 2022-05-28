@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Action{
+   + opeartion1():void
+   + opeartion2():void
+}
+class Success extends Action{
+   + opeartion1():void
+   + opeartion2():void
+}
+class Failure extends Action{
+   + opeartion1():void
+   + opeartion2():void
+}
+class Person{
+   + accept(action:Action):void
+}
+class Man extends Person{
+   + accept(action:Action):void
+}
+
+class Woman extends Person{
+   + accept(action:Action):void
+}
+class Wait extends Action{
+   + opeartion1():void
+   + opeartion2():void
+}
+class ObjectStructure{
+    - elements:Person
+}
+Person --o ObjectStructure
+Person --> Action
+class Client
+Client ..> Action
+Client ..> ObjectStructure
+@enduml

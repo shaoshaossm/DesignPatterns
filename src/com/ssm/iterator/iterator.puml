@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+interface Iterator {
+    + hasNext: boolean
+    + next(): E
+    + remove(): void
+}
+class ComputerColleagueIterator implements Iterator {
+
+}
+class InfoColleagueIterator implements Iterator {
+
+}
+interface College {
+    + createIterator(): Iterator
+}
+class ComputerCollege implements College {
+
+}
+class InfoCollege implements College {
+
+}
+
+class Department
+ComputerCollege ..>ComputerColleagueIterator
+InfoCollege ..>InfoColleagueIterator
+Department --o ComputerCollege
+Department --o InfoCollege
+Department --o ComputerColleagueIterator
+Department --o InfoColleagueIterator
+class OutputImpl
+note top of OutputImpl: 完成对所有学院的输出
+College --o OutputImpl
+class Client
+Client ..>OutputImpl
+Client ..>Iterator
+
+@enduml

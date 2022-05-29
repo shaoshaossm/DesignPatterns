@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Head
+class IDCard
+class Person
+class Person2
+
+Person -- IDCard :关联
+note top: 双向一对一关系
+IDCard -- Person :关联
+Head -- Person2 :关联
+note top: 单向一对一关系
+@enduml

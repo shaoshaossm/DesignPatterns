@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Colleague {
+    +SendMessage():void
+    +getMessage():void
+}
+class Mediator {
+
+}
+class ConcreteMediator extends Mediator {
+    -ColleagueMap:HashMap<>
+    +getMessage():void
+}
+class Client
+Client ..>Mediator
+Client ..>Colleague
+class Alarm extends Colleague {
+
+}
+class coffeeMachine extends Colleague {
+
+}
+class Curtain extends Colleague {
+
+}
+class TV extends Colleague {
+
+}
+class Phone extends Colleague {
+
+}
+Colleague --o ConcreteMediator
+Alarm ..> Mediator
+coffeeMachine ..> Mediator
+Curtain ..> Mediator
+TV ..> Mediator
+Phone ..> Mediator
+@enduml

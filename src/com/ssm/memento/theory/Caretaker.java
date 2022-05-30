@@ -1,4 +1,4 @@
-package com.ssm.theory;
+package com.ssm.memento.theory;
 
 import java.util.ArrayList;
 import java.util.List;

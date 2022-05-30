@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Memento{
+    -state: String
+}
+class Originator{
+
+}
+class Caretaker{
+    +memento: ArrayList<Memento>():void
+}
+class Client{
+}
+Client ..>Originator
+Client ..>Memento
+Memento --o Caretaker
+@enduml

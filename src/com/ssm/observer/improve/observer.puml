@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface  Subject
+{
+    +registerObserver(o: Observer):void
+    +removeObserver(o: Observer):void
+    +notifyObservers():void
+}
+class WeatherData implements Subject{
+    -observers:ArrayList
+}
+note top of WeatherData:核心类：\n1.天气信息 \n2.管理观察者Observers
+interface Observer{
+    +update():void
+}
+class Baidu implements Observer{
+}
+class Sina implements Observer{
+}
+class CurrentCondition implements Observer{
+}
+class Client
+Client ..> Subject
+Client ..> Observer
+Subject ..> Observer
+Observer --o WeatherData
+
+@enduml

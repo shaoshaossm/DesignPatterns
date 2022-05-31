@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Expression {
+    +interpreter():void
+}
+
+class VarExpression extends Expression {
+    +interpreter():void
+}
+class SymbolExpression extends Expression {
+    +interpreter():void
+}
+class AddExpression extends SymbolExpression{
+    +interpreter():void
+}
+class SubExpression extends SymbolExpression{
+    +interpreter():void
+}
+class Calculator {
+
+}
+class Client
+Client --> Calculator
+Expression --o SymbolExpression
+Expression --o Calculator
+
+
+@enduml

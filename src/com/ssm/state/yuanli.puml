@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface  State {
+    operation1():void
+    operation2():void
+}
+class ConcreteStateA implements State {
+
+}
+class ConcreteStateB implements State {
+
+}
+class Context{
+    - state:State
+    getState():State
+}
+State --o Context
+@enduml

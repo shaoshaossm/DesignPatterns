@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Strategy {
+    operation1():void;
+    operation2():void;
+}
+class ConcreteStrategyA implements Strategy {
+}
+
+class ConcreteStrategyB implements Strategy {
+}
+interface StrategyB {
+    operation1():void;
+    operation2():void;
+}
+class ConcreteStrategyC implements StrategyB {
+}
+
+class ConcreteStrategyD implements StrategyB {
+}
+class Context{
+    - strategy1:Strategy;
+    - strategy2:StrategyB;
+}
+Strategy --o Context
+StrategyB --o Context
+@enduml

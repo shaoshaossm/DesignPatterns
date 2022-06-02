@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface FlyBehavior {
+     fly():void;
+}
+class NoFlyBehavior implements FlyBehavior {
+
+}
+class GoodFlyBehavior implements FlyBehavior {
+
+}
+class BadFlyBehavior implements FlyBehavior {
+
+}
+interface QuackBehavior {
+     fly():void;
+}
+class GaGaQuackBehavior implements QuackBehavior {
+
+}
+class GeGeQuackBehavior implements QuackBehavior {
+
+}
+class NoQuackBehavior implements QuackBehavior {
+
+}
+class Duck{
+    -flyBehavior:FlyBehavior;
+    -quackBehavior:QuackBehavior;
+}
+class PekingDuck extends Duck{
+
+}
+class WildDuck extends Duck{
+
+}
+class ToyDuck extends Duck{
+
+}
+QuackBehavior --o Duck
+FlyBehavior --o Duck
+@enduml

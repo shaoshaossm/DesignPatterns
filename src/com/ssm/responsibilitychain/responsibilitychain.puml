@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Approver{
+    - approver Approver
+    + processRequest():void
+}
+class DepartmentApprover extends Approver{
+}
+class CollegeApprover extends Approver{
+}
+class VicePresidentApprover extends Approver{
+}
+class SchoolMasterApprover extends Approver{
+}
+Approver --o Approver
+class PurchaseRequest{
+
+}
+class Client
+Client ..>Approver
+Client ..>PurchaseRequest
+Approver ..>PurchaseRequest
+@enduml
